@@ -8,11 +8,40 @@
 
 Akari.biliScript是一个针对BiliPlayer的开源弹幕艺术辅助框架。这个辅助框架根据设计允许进度条跳转，并会将内容自动匹配到播放器窗口上。
 
-Akari.biliScript原本是为参赛作品Round and Round写作的，曾用名"Comment Art Helper for submission Round and Round"。正式名称的重命名是在作品投稿后一段时间以后的事情。
+原repo[akaza-akari/Akari.biliScript](https://github.com/akaza-akari/Akari.biliScript)
 
-获取
+我Fork这个repo的可能目的：
+
+>1. 创建一个较为平易近人的引导教程文档。
+>2. 针对于自身的制作需求，对一些相关组件进行扩展。(没错，在毕业前，我还想开坑，预定于10月)
+
+什么是弹幕艺术？
 ----
-如果你需要比提供的.biliScript文件更大的自由度，请下载Repository，变更需要的命名空间，然后将Akari.Template.biliScript拖拽到BiliScript.AkariBuilder.exe上。你将会得到一个Akari.biliScript，把它的内容发送到第0秒就行了。目前而言执行这个可执行文件需要安装.net Framework 4.5，因为写它的时候只是作为个人小工具。
+
+[百度百科的解释](http://baike.baidu.com/view/8938455.htm)
+
+如何使用
+----
+下载`BuildOutput/Akari.min.biliScript`
+
+把它的内容发送到第0秒（或者你认为的起始时刻）就行了。
+
+然后在其他需要使用此辅助框架的弹幕代码开头，进行以下声明。
+
+```js
+// Fetch a global reference for Akari
+var Akari = Global._get( "__akari" );
+Akari.stop();
+// Import namespaces by extending this closure
+Akari.Utilities.Factory.extend( this, Akari.Utilities );
+Factory.extend( this, Akari.Display );
+Factory.extend( this, Akari.Animation );
+```
+
+简单例程
+----
+访问`Samples/`
+
 
 Akari.biliScript并不能……
 ------------------------
